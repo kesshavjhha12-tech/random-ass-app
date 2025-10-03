@@ -52,21 +52,28 @@ def flirty_reply(text, name):
 
     return random.choice(responses)
 
-# Streamlit UI
+
+# ---------------- Streamlit UI ---------------- #
 st.set_page_config(page_title="Flirty Chatbot", page_icon="💖")
 
 st.title("💖 Flirty Chatbot 💖")
 st.markdown("Enter your name to start chatting.")
 
+# Initialize session state variables safely
 if "name" not in st.session_state:
-    user_name = st.text_input("Your name:", key="name_input")
+    st.session_state.name = None
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+
+# Step 1: Get user's name
+if not st.session_state.name:
+    user_name = st.text_input("Your name:")
     if user_name:
         st.session_state.name = user_name.strip()
-        st.experimental_rerun()
-else:
-    if "chat_history" not in st.session_state:
-        st.session_state.chat_history = []
+        st.rerun()
 
+# Step 2: Chat interface
+else:
     def display_chat():
         for speaker, message in st.session_state.chat_history:
             if speaker == st.session_state.name:
@@ -87,3 +94,6 @@ else:
             st.session_state.chat_history.append(("Flirty Bot", reply))
 
     display_chat()
+
+
+
