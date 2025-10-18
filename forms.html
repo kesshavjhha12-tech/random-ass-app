@@ -4,35 +4,58 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>form ka ek example</title>
+	<link rel="stylesheet" href="style.css">			
 </head>
 <body>
 	<fieldset>
-	<form action="reload.html" method="post">
+	<form action="connect.php" method="post">
 		<legend>This is ur mommas details</legend>
 		<label>Your(mommas ><) name</label>
-		<input type="text" name="username">
+		<input type="text" name="username" required autofocus placeholder="naam dal">
 		<br>
 
 		<label>Gender:</label>
-		<input type="radio" name="gender" value="male">Male
-		<input type="radio" name="gender" value="female">Female
+		<input type="radio" name="gender" value="male" required >Male
+		<input type="radio" name="gender" value="female" >Female
 		<br>
-		<input type="checkbox" name="alive" value="yesor no">Alive?
+		<input type="checkbox" name="alive" value="yesor no" required >Alive?
 		<br>
 		<label>Address:(so i could cum over😉</label>
 
 		
-<		<textarea>
+		<textarea placeholder="H.no building name road area pincode" required >
 			
 		</textarea>
 		<br> <hr>
 
 		<label>to the phone number (multiply by 1 and add 0 bbg😘></label>
-		<input type="number" name="phone">
+		<input type="number" name="phone" autocomplete="on ">
 		<br>
-		<input type="submit" name="submit">
-
+		<br>
+		<input type="file" name="file select hua" required  >
+		<br>
+		
+		<br>
+		<label>fav colour kya haiiiii</label>
+		
+		<input type="color" name="color" required >
+		<br>
+		<label>aze kya hai 😍</label>
+		<input type="date" name="">
+		<br>
+		
+		
+		<br>
+		<label>aap mujhe maaroge tho nahi na ?</label>
+		<input type="tel" name="lala" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required ><!--this makes only 3 -3 numbers to be written together-->
+		<br>
+		<input type="submit" name="daba idhar">
+		<br>
+		<input type="reset" name="reset ho gaye values">
 	</form>
    </fieldset>
+   
+   <!-- <p>ctrl + / for comment</p> -->
+   <p>...</p>
 </body>
 </html>
