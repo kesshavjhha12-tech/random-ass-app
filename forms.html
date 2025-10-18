@@ -1,61 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>form ka ek example</title>
-	<link rel="stylesheet" href="style.css">			
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Momma’s Details Form 😎</title>
+
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+	<style>
+		body {
+			font-family: 'Poppins', sans-serif;
+			background: linear-gradient(135deg, #a8edea, #fed6e3);
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+		fieldset {
+			backdrop-filter: blur(15px);
+			background: rgba(255, 255, 255, 0.2);
+			box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+		}
+		label {
+			font-weight: 600;
+		}
+	</style>
 </head>
 <body>
-	<fieldset>
-	<form action="connect.php" method="post">
-		<legend>This is ur mommas details</legend>
-		<label>Your(mommas ><) name</label>
-		<input type="text" name="username" required autofocus placeholder="naam dal">
-		<br>
+	<fieldset class="p-8 rounded-2xl w-full max-w-lg">
+		<form action="connect.php" method="post" class="space-y-4">
+			<legend class="text-2xl font-bold mb-4 text-pink-600 text-center">💖 Momma’s Details 💖</legend>
 
-		<label>Gender:</label>
-		<input type="radio" name="gender" value="male" required >Male
-		<input type="radio" name="gender" value="female" >Female
-		<br>
-		<input type="checkbox" name="alive" value="yesor no" required >Alive?
-		<br>
-		<label>Address:(so i could cum over😉</label>
+			<div>
+				<label>Your (momma’s) Name:</label>
+				<input type="text" name="username" required autofocus placeholder="Naam daal 👩‍🦰"
+					class="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-400">
+			</div>
 
-		
-		<textarea placeholder="H.no building name road area pincode" required >
-			
-		</textarea>
-		<br> <hr>
+			<div>
+				<label>Gender:</label>
+				<div class="flex gap-4 mt-1">
+					<label><input type="radio" name="gender" value="male" required> Male</label>
+					<label><input type="radio" name="gender" value="female"> Female</label>
+				</div>
+			</div>
 
-		<label>to the phone number (multiply by 1 and add 0 bbg😘></label>
-		<input type="number" name="phone" autocomplete="on ">
-		<br>
-		<br>
-		<input type="file" name="file select hua" required  >
-		<br>
-		
-		<br>
-		<label>fav colour kya haiiiii</label>
-		
-		<input type="color" name="color" required >
-		<br>
-		<label>aze kya hai 😍</label>
-		<input type="date" name="">
-		<br>
-		
-		
-		<br>
-		<label>aap mujhe maaroge tho nahi na ?</label>
-		<input type="tel" name="lala" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required ><!--this makes only 3 -3 numbers to be written together-->
-		<br>
-		<input type="submit" name="daba idhar">
-		<br>
-		<input type="reset" name="reset ho gaye values">
-	</form>
-   </fieldset>
-   
-   <!-- <p>ctrl + / for comment</p> -->
-   <p>...</p>
+			<div>
+				<label><input type="checkbox" name="alive" value="yesor no" required> Alive?</label>
+			</div>
+
+			<div>
+				<label>Address (so I could come over 😉):</label>
+				<textarea name="address" placeholder="H.no, Building name, Road, Area, Pincode" required
+					class="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-400"></textarea>
+			</div>
+
+			<hr class="my-4 border-pink-300">
+
+			<div>
+				<label>Phone number (×1 + 0 bbg 😘):</label>
+				<input type="number" name="phone" autocomplete="on"
+					class="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-400">
+			</div>
+
+			<div>
+				<label>Upload File:</label>
+				<input type="file" name="file" required
+					class="w-full p-2 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400">
+			</div>
+
+			<div>
+				<label>Fav Colour kya hai 🎨:</label>
+				<input type="color" name="color" required class="ml-2">
+			</div>
+
+			<div>
+				<label>Date kya hai 😍:</label>
+				<input type="date" name="date" class="ml-2 border border-gray-300 p-1 rounded-lg">
+			</div>
+
+			<div>
+				<label>Aap mujhe maaroge toh nahi na?</label>
+				<input type="tel" name="lala" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
+					placeholder="123-456-7890" class="w-full p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-pink-400">
+			</div>
+
+			<div class="flex justify-between mt-6">
+				<input type="submit" value="Submit 📝" class="bg-pink-500 text-white px-5 py-2 rounded-lg hover:bg-pink-600 transition-all">
+				<input type="reset" value="Reset 🔄" class="bg-gray-300 text-black px-5 py-2 rounded-lg hover:bg-gray-400 transition-all">
+			</div>
+		</form>
+	</fieldset>
 </body>
 </html>
